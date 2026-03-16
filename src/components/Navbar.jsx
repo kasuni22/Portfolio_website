@@ -11,7 +11,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     { name: 'About', link: '#about' },
     { name: 'Skills', link: '#skills' },
     { name: 'Projects', link: '#projects' },
-    { name: 'Contact', link: '#contact' }
+    { name: 'Certificates', link: '#certificates' },
+    
   ];
 
   const lightColors = {
@@ -56,7 +57,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2">
             <span className={`text-xl font-bold ${colors.textPrimary}`}>
-              Portfolio<span className="text-orange-500">.</span>
+              Kasuni Madeesha <span className="text-orange-500">.</span>
             </span>
           </motion.a>
 
@@ -109,7 +110,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`hidden lg:block px-6 py-2 font-semibold rounded-full bg-gradient-to-r ${colors.button} text-white shadow-md hover:shadow-lg transition-shadow`}>
-              Hire Me
+              Contact Me
             </motion.a>
           </div>
 
@@ -165,7 +166,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 onClick={() => setIsMenuOpen(false)}
                 whileTap={{ scale: 0.95 }}
                 className={`block py-3 px-4 text-center font-semibold rounded-lg bg-gradient-to-r ${colors.button} text-white shadow-md`}>
-                Hire Me
+                Contact Me
               </motion.a>
             </div>
           </motion.div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Navbar from "./components/Navbar"
+import Hero from './components/Hero'
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true)
@@ -16,6 +17,10 @@ const App = () => {
     document.documentElement.classList.add('dark');
   }, []);
 
+  useEffect(() => {
+    AOS.refresh()
+  },[darkMode])
+
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
@@ -28,6 +33,7 @@ const App = () => {
         : 'bg-gradient-to-br from-gray-50 to-gray-50 min-h-screen'
     }>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Hero darkMode={darkMode}/>
     </div>
   )
 }
