@@ -4,9 +4,10 @@ import github from "../assets/github.png";
 import youtube from "../assets/youtube.png";
 import CV from "../assets/CV.pdf";
 import { DownloadIcon, Mail } from "lucide-react";
-import hero from "../assets/hero.jpg";
+import hero from "../assets/hero.png";
+import hi from "../assets/hi.png";
 
-const Hero  = ({ darkMode }) => {
+const Hero = ({ darkMode }) => {
   const socialIcons = [
     { icon: instagram, alt: "Instagram" },
     { icon: tiktok, alt: "tiktok" },
@@ -41,32 +42,23 @@ const Hero  = ({ darkMode }) => {
         className="body-font z-10"
       >
         <div
-          className="container mx-auto flex px-4 sm:px-8 lg:px-14 
-        py-12 lg:py-32 flex-col lg:flex-row items-center justify-between
-         lg:mt-0 mt-14"
+          className="container mx-auto flex px-4 sm:px-8 lg:px-14 py-12 lg:py-14 
+                        flex-col lg:flex-row items-center justify-between lg:mt-14 mt-14"
         >
-          <div
-            className="lg:w-1/2 w-full flex flex-col items-center
-           lg:items-start text-center lg:text-left mb-12 lg:mb-0"
-          >
-            <div
-              className="flex justify-center lg:justify-start
-             gap-4 sm:gap-6 mb-6 sm:mb-7 w-full"
-            >
+          <div className="lg:w-1/2 w-full flex flex-col items-center lg:items-start text-center lg:text-left mb-12 lg:mb-0">
+            <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-7 w-full">
               {socialIcons.map((social, index) => (
                 <a
                   key={index}
                   href="#"
                   target="_blank"
                   data-aos-delay={"${400 + index * 100}"}
-                  className="transform hover:scale-110 
-      transition-transform duration-300"
+                  className="transform hover:scale-110 transition-transform duration-300"
                 >
                   <img
                     src={social.icon}
                     alt={social.alt}
-                    className={`w-8 h-8 sm:w-10 sm:h-10 
-            object-contain ${darkMode ? "" : "filter brightness-75"}`}
+                    className={`w-8 h-8 sm:w-10 sm:h-10 object-contain ${darkMode ? "" : "filter brightness-75"}`}
                   />
                 </a>
               ))}
@@ -84,7 +76,9 @@ const Hero  = ({ darkMode }) => {
               data-aos="fade-up"
               data-aos-delay="600"
             >
-              Computer Science undergraduate specializing in MERN stack development, passionate about building modern web applications and solving complex problems with clean, scalable solutions.
+              Computer Science undergraduate specializing in MERN stack
+              development, passionate about building modern web applications and
+              solving complex problems with clean, scalable solutions.
             </p>
             {/* Buttons */}
             <div className="w-full pt-4 sm:pt-6">
@@ -95,11 +89,9 @@ const Hero  = ({ darkMode }) => {
               >
                 <a href={CV} download className="w-full sm:w-auto">
                   <button
-                    className="w-full sm:w-auto inline-flex items-center justify-center text-white
-        bg-gradient-to-r from-orange-500 to-amber-500 border-0
-        py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgba(255,165,0,0.7)]
-        rounded-full text-base sm:text-lg font-semibold
-        transition-all duration-300 transform"
+                    className="w-full sm:w-auto inline-flex items-center justify-center text-white bg-gradient-to-r from-orange-500 
+                               to-amber-500 border-0 py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgba(255,165,0,0.7)] rounded-full text-base
+                               sm:text-lg font-semibold transition-all duration-300 transform"
                   >
                     <DownloadIcon className="w-4 h-4 sm:h-5 sm:w-5 mr-2" />
                     Download CV
@@ -107,13 +99,9 @@ const Hero  = ({ darkMode }) => {
                 </a>
                 <a href="#contact" className="w-full sm:w-auto">
                   <button
-                    className={`w-full sm:w-auto
-         inline-flex items-center ${theme.buttonSecondary}
-         justify-center text-white border-0
-        py-3 px-6 sm:px-8 hover:shadow-[0_0_40px_rgb(255,165,0,0.7)]
-        rounded-full text-base sm:text-lg font-semibold
-        transition-all duration-300 transform
-        `}
+                    className={`w-full sm:w-auto inline-flex items-center ${theme.buttonSecondary} justify-center border-0 py-3 px-6 sm:px-8 
+                                hover:shadow-[0_0_40px_rgb(255,165,0,0.7)] rounded-full text-base sm:text-lg font-semibold transition-all 
+                                duration-300 transform`}
                   >
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Contact Me
@@ -123,24 +111,34 @@ const Hero  = ({ darkMode }) => {
             </div>
           </div>
           {/* Image */}
-<div
-  className="lg:w-1/2 w-full max-w-md lg:max-w-lg mt-8 lg:mt-0 flex justify-center"
-  data-aos="fade-left"
-  data-aos-delay="400"
->
-  <div className="relative w-4/5 sm:w-3/4 lg:w-full">
-    
-    <div className="relative overflow-hidden rounded-2xl">
-      <img
-        src={hero}
-        alt="Hero"
-        className="w-full h-auto object-contain"
-      />
-    </div>
-
-  </div>
-</div>
-</div>
+          <div
+            className="lg:w-1/2 w-full max-w-md lg:max-w-lg mt-8 lg:mt-0 flex justify-center"
+            data-aos="fade-left"
+            data-aos-delay="400"
+          >
+            <div className="relative w-4/5 sm:w-3/4 lg:w-full">
+              <div className="relative overflow-hidden rounded-2xl">
+                <img
+                  src={hero}
+                  alt="Hero Image"
+                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              {/* Hi floating icon */}
+              <img
+                src={hi}
+                alt="Hi icon"
+                className="absolute -top-4 sm:-top-4 left-6 sm:left-20 w-14 h-14 sm:w-20 sm:h-20 object-contain
+                           animate-bounce opacity-90 z-10"
+              />
+            </div>
+          </div>
+          {/* Decorative Circle */}
+          <div
+            className={`absolute -top-20 -left-20 w-40 h-40 sm:w-64 sm:h-64 ${theme.decorativeCircle} rounded-full mix-blend-multiply
+                        filter blur-3xl opacity-10 animate-pulse delay-1000 hidden sm:block`}
+          ></div>
+        </div>
       </section>
     </div>
   );
