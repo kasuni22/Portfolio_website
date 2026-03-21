@@ -1,47 +1,31 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import bookProject from '../assets/book_project.png';
+import shopProject from '../assets/shop_project.png';
 
 const Projects = ({ darkMode }) => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'React', 'Laravel', 'Vue', 'Firebase', 'Python'];
+  const filters = ['All', 'React', 'PHP', 'MongoDB'];
 
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-featured online store with cart and checkout.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
+      title: 'Book Store Management System',
+      description: 'A full-stack MERN application where customers can browse, search, and order books with user authentication, while admins can manage the entire inventory by adding, editing, and deleting books.',
+      tech: ['React', 'Node.js', 'MongoDB', 'Express.js'],
+      live: 'https://book-store-management-system-client.onrender.com/',
+      github: 'https://github.com/kasuni22/Book_store_management_system.git',
+      image: bookProject,
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'Real-time collaborative task tracking and kanban board.',
-      tech: ['React', 'Firebase', 'Tailwind'],
-    },
-    {
-      id: 3,
-      title: 'Restaurant Website',
-      description: 'Elegant website with menu and table reservation system.',
-      tech: ['Laravel', 'MySQL', 'Tailwind'],
-    },
-    {
-      id: 4,
-      title: 'Blog Platform',
-      description: 'Content management system with markdown support.',
-      tech: ['Vue', 'Laravel', 'MySQL'],
-    },
-    {
-      id: 5,
-      title: 'Weather App',
-      description: 'Live weather forecasting using external APIs.',
-      tech: ['React', 'Python', 'API'],
-    },
-    {
-      id: 6,
-      title: 'Student Portal',
-      description: 'Academic tracking and course registration system.',
-      tech: ['Laravel', 'MySQL', 'Bootstrap'],
+      title: 'Retail & Wholesale Shop Control System',
+      description: 'A web-based system that streamlines retail and wholesale operations by managing inventory, sales, billing, and customers with real-time tracking, secure access, and efficient workflow automation.',
+      tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+      live: 'https://sandarufoodmart.free.nf/?i=1',
+      github: 'https://github.com/kasuni22/Retail-wholesale-shop-control-system.git',
+      image: shopProject,
     },
   ];
 
@@ -96,7 +80,7 @@ const Projects = ({ darkMode }) => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto gap-8">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -109,15 +93,21 @@ const Projects = ({ darkMode }) => {
                   : 'bg-white border-gray-200'
               }`}
             >
-              {/* Image Placeholder */}
-              <div className={`h-48 w-full bg-gradient-to-br ${getGradient(project.tech[0])}`}></div>
+              {/* Image */}
+              <div className="overflow-hidden rounded-t-2xl">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover object-top transition-transform duration-500 hover:scale-105"
+                />
+              </div>
 
               {/* Card Content */}
               <div className="p-6 flex flex-col flex-grow">
                 <h2 className={`text-xl font-bold mb-2 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                   {project.title}
                 </h2>
-                <p className={`text-sm mb-4 truncate transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                <p className={`text-sm leading-relaxed mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                   {project.description}
                 </p>
 
@@ -140,13 +130,17 @@ const Projects = ({ darkMode }) => {
                 {/* Action Buttons */}
                 <div className="flex gap-3 mt-auto">
                   <a
-                    href="#"
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 text-center py-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium text-sm hover:opacity-90 transition-opacity"
                   >
                     Live Demo
                   </a>
                   <a
-                    href="#"
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`flex-1 text-center py-2 rounded-lg border border-orange-500 text-orange-500 font-medium text-sm transition-colors duration-300 ${
                       darkMode ? 'hover:bg-gray-700' : 'hover:bg-orange-50'
                     }`}

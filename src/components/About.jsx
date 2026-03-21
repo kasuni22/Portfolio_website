@@ -1,6 +1,31 @@
 import about from "../assets/about.png";
+import { Briefcase, GraduationCap, Mail, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const About = ({ darkMode }) => {
+  const infoCards = [
+    {
+      icon: <Briefcase className="w-5 h-5" />,
+      label: "Experience",
+      value: "2+ Years"
+    },
+    {
+      icon: <GraduationCap className="w-5 h-5" />,
+      label: "Degree",
+      value: "B.Sc.(Hons) in Computer Science"
+    },
+    {
+      icon: <Mail className="w-5 h-5" />,
+      label: "Email",
+      value: "kmkariyawasam4@gmail.com"
+    },
+    {
+      icon: <Globe className="w-5 h-5" />,
+      label: "Availability",
+      value: "Open To Work"
+    },
+  ];
+
   return (
     <section
       id="about"
@@ -53,94 +78,58 @@ const About = ({ darkMode }) => {
             </h1>
           </header>
 
-          <p
-            className={`text-sm sm:text-base lg:text-lg xl:text-xl mb-6 sm:mb-8 leading-relaxed
-            bg-gradient-to-r from-orange-900/10 to-orange-900/5 p-4 sm:p-6 rounded-xl sm:rounded-2xl backdrop-blur-sm
-            ${darkMode ? "text-gray-300" : "text-gray-700"}`}
+          <p className={`text-sm sm:text-base lg:text-lg mb-4 leading-relaxed
+            ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
             data-aos="fade-up"
             data-aos-delay="500"
           >
-            I’m Kasuni Madeesha Kariyawasam, a Computer Science undergraduate
-            specializing in MERN stack development, passionate about building
-            modern web applications and solving problems with clean, scalable
-            solutions.
-            <br /> <br />I enjoy learning new technologies, improving my coding
-            skills, and developing efficient, user-focused applications while
-            continuously growing as a future software engineer.
+            I'm Kasuni Madeesha Kariyawasam, a third-year Computer Science undergraduate with 2+ years of hands-on coding experience. I specialize in full-stack web development using the MERN stack, PHP & MySQL, and API development.
           </p>
 
-          {/* Stats */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
-            {/* Education */}
-            <div
-              className="text-center"
-              data-aos="zoom-in"
-              data-aos-delay="600"
-            >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-400">
-                4+
-              </div>
-              <div
-                className={`text-xs sm:text-sm lg:text-base ${
-                  darkMode ? "text-gray-300" : "text-gray-600"
-                }`}
-              >
-                Education
-              </div>
-            </div>
+          <p className={`text-sm sm:text-base lg:text-lg mb-6 leading-relaxed
+            ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
+            data-aos="fade-up"
+            data-aos-delay="550"
+          >
+            I'm driven by a genuine passion for problem solving, logical thinking, and continuously learning new technologies — building real-world applications that are clean, scalable, and user-focused.
+          </p>
 
-            {/* Experience */}
-            <div
-              className="text-center"
-              data-aos="zoom-in"
-              data-aos-delay="650"
-            >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-400">
-                2+
-              </div>
-              <div
-                className={`text-xs sm:text-sm lg:text-base ${
-                  darkMode ? "text-gray-300" : "text-gray-600"
-                }`}
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-3 mb-6 sm:mb-8 text-left">
+            {infoCards.map((card, index) => (
+              <motion.div
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={600 + index * 50}
+                whileHover={{ scale: 1.03 }}
+                className={`flex items-center gap-3 p-3 rounded-xl border
+                  ${darkMode
+                    ? 'bg-gray-800/60 border-gray-700'
+                    : 'bg-white border-gray-200 shadow-sm'
+                  }`}
               >
-                Years Experience
-              </div>
-            </div>
-
-            {/* Projects */}
-            <div
-              className="text-center"
-              data-aos="zoom-in"
-              data-aos-delay="700"
-            >
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-400">
-                5+
-              </div>
-              <div
-                className={`text-xs sm:text-sm lg:text-base ${
-                  darkMode ? "text-gray-300" : "text-gray-600"
-                }`}
-              >
-                Projects Completed
-              </div>
-            </div>
+                <div className="p-2 rounded-lg bg-orange-500/10 text-orange-400 shrink-0">
+                  {card.icon}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className={`text-xs mb-0.5 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                    {card.label}
+                  </p>
+                  {card.label === 'Availability' ? (
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse inline-block shrink-0"></span>
+                      <span className={`text-sm font-semibold truncate ${darkMode ? 'text-white' : 'text-gray-800'}`}>Open To Work</span>
+                    </div>
+                  ) : (
+                    <p className={`text-sm font-semibold break-words ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                      {card.value}
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Button */}
-          <button
-            className={`w-full sm:w-auto border-2 border-orange-500 inline-flex items-center justify-center py-2 px-4 sm:px-6 
-            hover:shadow-[0_0_40px_rgb(255,165,0,0.7)] rounded-full text-base sm:text-lg font-semibold
-            transition-all duration-300 transform
-            ${
-              darkMode
-                ? "text-white bg-orange-500/10"
-                : "text-gray-800 bg-white/90"
-            }`}
-            data-aos="fade-up"
-            data-aos-delay="800"
-          >
-            Learn More
-          </button>
         </article>
       </div>
     </section>

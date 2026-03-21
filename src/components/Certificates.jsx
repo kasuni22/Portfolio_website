@@ -1,54 +1,62 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Award } from 'lucide-react';
+import cert5 from '../assets/certificates/certificate (5).png';
+import cert1a from '../assets/certificates/certificate (1a).png';
+import cert2 from '../assets/certificates/certificate (2).png';
+import cert3a from '../assets/certificates/certificate (3a).png';
+import cert4a from '../assets/certificates/certificate (4a).png';
 
 const Certificates = ({ darkMode }) => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'Web Development', 'Programming', 'Database', 'Cloud', 'Design'];
+  const filters = ['All', 'Web Development', 'API & Testing', 'AI & ML', 'Networking & OS'];
 
   const certificates = [
     {
       id: 1,
-      title: 'React - The Complete Guide',
-      organization: 'Udemy',
-      category: 'Web Development',
-      date: 'Dec 2024',
+      title: "Postman API Fundamentals Student Expert",
+      organization: "Postman",
+      category: "API & Testing",
+      date: "Feb 2026",
+      url: "https://badges.parchment.com/public/assertions/oxBrl2IfRLSvxsdYtWY9uw",
+      image: cert5,
     },
     {
       id: 2,
-      title: 'Laravel PHP Framework',
-      organization: 'Coursera',
-      category: 'Web Development',
-      date: 'Oct 2024',
+      title: "MERN Full-Stack Web Development",
+      organization: "SKYREK",
+      category: "Web Development",
+      date: "Jul 2025",
+      url: "https://certificate.skyrek.com/certifcates/completion/XFw09XPZaQbS",
+      image: cert1a,
     },
     {
       id: 3,
-      title: 'Python for Everybody',
-      organization: 'University of Michigan / Coursera',
-      category: 'Programming',
-      date: 'Aug 2024',
+      title: "Machine Learning I",
+      organization: "Columbia+",
+      category: "AI & ML",
+      date: "Feb 2026",
+      url: "https://badges.plus.columbia.edu/1d3a15d2-7316-4716-bba7-2c275d30dceb#acc.xehaBuRJ",
+      image: cert2,
     },
     {
       id: 4,
-      title: 'Firebase & Firestore Mastery',
-      organization: 'Udemy',
-      category: 'Cloud',
-      date: 'Jun 2024',
+      title: "Linux Essentials",
+      organization: "Cisco Networking Academy",
+      category: "Networking & OS",
+      date: "Mar 2026",
+      url: "https://www.credly.com/badges/60b8e5bb-f237-47b8-85e4-4763d20d16dd/linked_in_profile",
+      image: cert3a,
     },
     {
       id: 5,
-      title: 'MySQL Database Design',
-      organization: 'LinkedIn Learning',
-      category: 'Database',
-      date: 'Apr 2024',
-    },
-    {
-      id: 6,
-      title: 'UI/UX Design Fundamentals',
-      organization: 'Google',
-      category: 'Design',
-      date: 'Feb 2024',
+      title: "Linux Unhatched",
+      organization: "Cisco Networking Academy",
+      category: "Networking & OS",
+      date: "Mar 2026",
+      url: "https://www.credly.com/badges/9385885e-dadb-450c-b18a-c6186257a167/linked_in_profile",
+      image: cert4a,
     },
   ];
 
@@ -109,45 +117,46 @@ const Certificates = ({ darkMode }) => {
               <div className="h-3 w-full bg-gradient-to-r from-orange-400 to-orange-600 border-b border-orange-500/30"></div>
 
               <div className="p-6 flex flex-col flex-grow items-center text-center">
-                {/* Large Icon */}
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors duration-300 ${
-                  darkMode ? 'bg-orange-900/30 text-orange-400' : 'bg-orange-100 text-orange-500'
-                }`}>
-                  <Award size={32} />
+                {/* Image */}
+                <div className="overflow-hidden rounded-xl mb-4 w-full">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                
-                {/* Category Badge */}
-                <span className={`text-xs px-3 py-1 rounded-full font-medium mb-3 transition-colors duration-300 ${
-                  darkMode 
-                    ? 'bg-orange-900/30 text-orange-400' 
-                    : 'bg-orange-100 text-orange-600'
-                }`}>
-                  {cert.category}
-                </span>
 
-                {/* Title & Org */}
-                <h2 className={`text-lg font-bold mb-1 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                {/* Title */}
+                <h2 className={`text-lg font-bold mb-3 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                   {cert.title}
                 </h2>
-                <p className="text-orange-500 font-medium text-sm mb-4">
-                  {cert.organization}
-                </p>
+                
+                {/* Meta details (Org, Category, Date) */}
+                <div className="flex items-center justify-center gap-2 flex-wrap mb-3">
+                  <span className="text-orange-400 font-medium text-sm">{cert.organization}</span>
+                  <span className="text-gray-400 text-sm">•</span>
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${darkMode ? 'bg-orange-500/20 text-orange-300' : 'bg-orange-100 text-orange-600'}`}>
+                    {cert.category}
+                  </span>
+                  <span className="text-gray-400 text-sm">•</span>
+                  <span className={`text-xs flex items-center gap-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                    <Calendar className="w-3 h-3" />
+                    {cert.date}
+                  </span>
+                </div>
                 
                 {/* Space filler to push everything else down if titles have different lines */}
                 <div className="flex-grow"></div>
 
-                {/* Date */}
-                <div className={`flex items-center gap-1.5 text-xs mb-5 font-medium transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                  <Calendar size={14} />
-                  <span>{cert.date}</span>
-                </div>
-
                 {/* Action CTA */}
-                <button 
-                  className="w-full py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium text-sm hover:opacity-90 transition-opacity"
+                <a 
+                  href={cert.url}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium text-sm hover:opacity-90 transition-opacity inline-block"
                 >
                   View Certificate
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}

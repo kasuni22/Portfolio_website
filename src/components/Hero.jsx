@@ -83,9 +83,7 @@ const Hero = ({ darkMode }) => {
               data-aos="fade-up"
               data-aos-delay="600"
             >
-              Computer Science undergraduate specializing in MERN stack
-              development, passionate about building modern web applications and
-              solving complex problems with clean, scalable solutions.
+              Computer Science undergraduate specializing in full-stack web development with the MERN stack. Passionate about building modern, scalable web applications and actively seeking internship opportunities and freelance projects to grow and contribute.
             </p>
             {/* Buttons */}
             <div className="w-full pt-4 sm:pt-6">
