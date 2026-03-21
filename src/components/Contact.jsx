@@ -69,7 +69,7 @@ const Contact = ({ darkMode }) => {
                 </div>
                 <div>
                   <h3 className={`font-bold text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Location</h3>
-                  <p className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Negombo, Sri Lanka</p>
+                  <p className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Matara, Sri Lanka</p>
                 </div>
               </div>
 
@@ -82,20 +82,7 @@ const Contact = ({ darkMode }) => {
                 </div>
                 <div>
                   <h3 className={`font-bold text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Email</h3>
-                  <p className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>kasunimadeesha@gmail.com</p>
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className={`flex items-center p-4 rounded-xl border shadow-sm transition-colors duration-300 ${
-                darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
-              }`}>
-                <div className="p-3 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full text-white mr-4 shadow-sm">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <h3 className={`font-bold text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Phone</h3>
-                  <p className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>+94 77 123 4567</p>
+                  <a href="mailto:kmkariyawasam4@gmail.com" className={`text-sm font-medium hover:text-orange-500 transition-colors ${darkMode ? 'text-white' : 'text-gray-900'}`}>kmkariyawasam4@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -103,7 +90,9 @@ const Contact = ({ darkMode }) => {
             {/* Social Media Row */}
             <div className="flex gap-4">
               <motion.a 
-                href="#"
+                href="https://github.com/kasuni22"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2 }}
                 className={`p-3 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center transition-colors ${
                   darkMode ? 'hover:bg-gray-800' : 'hover:bg-orange-50'
@@ -112,7 +101,9 @@ const Contact = ({ darkMode }) => {
                 <Github size={20} />
               </motion.a>
               <motion.a 
-                href="#"
+                href="https://www.linkedin.com/in/kasuni-kariyawasam-6aa071312/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2 }}
                 className={`p-3 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center transition-colors ${
                   darkMode ? 'hover:bg-gray-800' : 'hover:bg-orange-50'
@@ -121,22 +112,15 @@ const Contact = ({ darkMode }) => {
                 <Linkedin size={20} />
               </motion.a>
               <motion.a 
-                href="#"
+                href="mailto:kmkariyawasam4@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2 }}
                 className={`p-3 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center transition-colors ${
                   darkMode ? 'hover:bg-gray-800' : 'hover:bg-orange-50'
                 }`}
               >
-                <Instagram size={20} />
-              </motion.a>
-              <motion.a 
-                href="#"
-                whileHover={{ scale: 1.2 }}
-                className={`p-3 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center transition-colors ${
-                  darkMode ? 'hover:bg-gray-800' : 'hover:bg-orange-50'
-                }`}
-              >
-                <Youtube size={20} />
+                <Mail size={20} />
               </motion.a>
             </div>
           </div>
