@@ -53,7 +53,9 @@ const Footer = ({ darkMode }) => {
             
             <div className="flex gap-3">
               <motion.a 
-                href="#"
+                href="https://github.com/kasuni22"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 className={`p-2 rounded-full border border-orange-500/30 text-orange-400 flex items-center justify-center transition-colors ${
                   darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-orange-50'
@@ -62,7 +64,9 @@ const Footer = ({ darkMode }) => {
                 <Github size={18} />
               </motion.a>
               <motion.a 
-                href="#"
+                href="https://www.linkedin.com/in/kasuni-kariyawasam-6aa071312/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 className={`p-2 rounded-full border border-orange-500/30 text-orange-400 flex items-center justify-center transition-colors ${
                   darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-orange-50'
@@ -71,22 +75,15 @@ const Footer = ({ darkMode }) => {
                 <Linkedin size={18} />
               </motion.a>
               <motion.a 
-                href="#"
+                href="mailto:kmkariyawasam4@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 className={`p-2 rounded-full border border-orange-500/30 text-orange-400 flex items-center justify-center transition-colors ${
                   darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-orange-50'
                 }`}
               >
-                <Instagram size={18} />
-              </motion.a>
-              <motion.a 
-                href="#"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                className={`p-2 rounded-full border border-orange-500/30 text-orange-400 flex items-center justify-center transition-colors ${
-                  darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-orange-50'
-                }`}
-              >
-                <Youtube size={18} />
+                <Mail size={18} />
               </motion.a>
             </div>
           </div>
@@ -118,21 +115,15 @@ const Footer = ({ darkMode }) => {
               <div className="flex items-center justify-center lg:justify-start gap-3">
                 <MapPin className="text-orange-400 w-4 h-4 flex-shrink-0" />
                 <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                  Negombo, Sri Lanka
+                  Matara, Sri Lanka
                 </span>
               </div>
-              <div className="flex items-center justify-center lg:justify-start gap-3 group cursor-pointer">
+              <a href="mailto:kmkariyawasam4@gmail.com" className="flex items-center justify-center lg:justify-start gap-3 group cursor-pointer">
                 <Mail className="text-orange-400 w-4 h-4 flex-shrink-0 group-hover:text-amber-500 transition-colors" />
                 <span className={`text-sm transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-500'} group-hover:text-orange-400`}>
-                  kasunimadeesha@gmail.com
+                  kmkariyawasam4@gmail.com
                 </span>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start gap-3 group cursor-pointer">
-                <Phone className="text-orange-400 w-4 h-4 flex-shrink-0 group-hover:text-amber-500 transition-colors" />
-                <span className={`text-sm transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-500'} group-hover:text-orange-400`}>
-                  +94 77 123 4567
-                </span>
-              </div>
+              </a>
             </div>
           </div>
 

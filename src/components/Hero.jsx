@@ -1,19 +1,10 @@
-import instagram from "../assets/instagram.png";
-import tiktok from "../assets/tiktok.png";
 import github from "../assets/github.png";
-import youtube from "../assets/youtube.png";
 import CV from "../assets/CV.pdf";
-import { DownloadIcon, Mail } from "lucide-react";
+import { DownloadIcon, Mail, Linkedin } from "lucide-react";
 import hero from "../assets/hero.png";
 import hi from "../assets/hi.png";
 
 const Hero = ({ darkMode }) => {
-  const socialIcons = [
-    { icon: instagram, alt: "Instagram" },
-    { icon: tiktok, alt: "tiktok" },
-    { icon: github, alt: "github" },
-    { icon: youtube, alt: "youtube" },
-  ];
 
   const darkTheme = {
     textPrimary: "text-white",
@@ -46,22 +37,38 @@ const Hero = ({ darkMode }) => {
                         flex-col lg:flex-row items-center justify-between lg:mt-14 mt-14"
         >
           <div className="lg:w-1/2 w-full flex flex-col items-center lg:items-start text-center lg:text-left mb-12 lg:mb-0">
-            <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-7 w-full">
-              {socialIcons.map((social, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  target="_blank"
-                  data-aos-delay={"${400 + index * 100}"}
-                  className="transform hover:scale-110 transition-transform duration-300"
-                >
-                  <img
-                    src={social.icon}
-                    alt={social.alt}
-                    className={`w-8 h-8 sm:w-10 sm:h-10 object-contain ${darkMode ? "" : "filter brightness-75"}`}
-                  />
-                </a>
-              ))}
+            <div className="flex justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-7 w-full items-center">
+              <a
+                href="https://github.com/kasuni22"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-aos-delay="400"
+                className="transform hover:scale-110 transition-transform duration-300"
+              >
+                <img
+                  src={github}
+                  alt="GitHub"
+                  className={`w-8 h-8 sm:w-10 sm:h-10 object-contain ${darkMode ? "" : "filter brightness-75"}`}
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kasuni-kariyawasam-6aa071312/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-aos-delay="500"
+                className={`transform hover:scale-110 transition-transform duration-300 ${darkMode ? "text-white" : "text-gray-900 filter brightness-75"}`}
+              >
+                <Linkedin className="w-8 h-8 sm:w-10 sm:h-10" />
+              </a>
+              <a
+                href="mailto:kmkariyawasam4@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-aos-delay="600"
+                className={`transform hover:scale-110 transition-transform duration-300 ${darkMode ? "text-white" : "text-gray-900 filter brightness-75"}`}
+              >
+                <Mail className="w-8 h-8 sm:w-10 sm:h-10" />
+              </a>
             </div>
             <h1
               className={`title-font text-3xl sm:text-4xl lg:text-5xl mb-4 font-bold ${theme.textPrimary}`}
