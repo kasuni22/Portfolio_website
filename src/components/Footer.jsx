@@ -45,7 +45,7 @@ const Footer = ({ darkMode }) => {
               Kasuni Madeesha<span className="text-orange-500">.</span>
             </h2>
             <p className={`text-sm mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-              CS Undergraduate & MERN Stack Developer
+              CS Undergraduate & Full Stack Developer
             </p>
             <p className={`text-sm max-w-xs mb-6 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
               Building modern web applications with clean, scalable solutions.
