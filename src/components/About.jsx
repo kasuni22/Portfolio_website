@@ -95,7 +95,7 @@ const About = ({ darkMode }) => {
           </p>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-3 mb-6 sm:mb-8 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 sm:mb-8 text-left">
             {infoCards.map((card, index) => (
               <motion.div
                 key={index}
