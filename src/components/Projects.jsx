@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import bookProject from '../assets/book_project.png';
 import shopProject from '../assets/shop_project.png';
+import hotelProject from '../assets/hotel_project.png';
 
 const Projects = ({ darkMode }) => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -11,6 +12,15 @@ const Projects = ({ darkMode }) => {
   const projects = [
     {
       id: 1,
+      title: 'Hotel Management System',
+      description: 'A full-featured Hotel Management System that streamlines room reservations, room management and customer handling, ensuring efficient operations and a smooth experience for both staff and guests.',
+      tech: ['React', 'Node.js', 'MongoDB', 'Express.js'],
+      live: 'https://hotel-management-frontend-weld.vercel.app/',
+      github: 'https://github.com/kasuni22/hotel-management-frontend.git',
+      image: hotelProject,
+    },
+    {
+      id: 2,
       title: 'Book Store Management System',
       description: 'A full-stack MERN application where customers can browse, search, and order books with user authentication, while admins can manage the entire inventory by adding, editing, and deleting books.',
       tech: ['React', 'Node.js', 'MongoDB', 'Express.js'],
@@ -19,7 +29,7 @@ const Projects = ({ darkMode }) => {
       image: bookProject,
     },
     {
-      id: 2,
+      id: 3,
       title: 'Retail & Wholesale Shop Control System',
       description: 'A web-based system that streamlines retail and wholesale operations by managing inventory, sales, billing, and customers with real-time tracking, secure access, and efficient workflow automation.',
       tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
