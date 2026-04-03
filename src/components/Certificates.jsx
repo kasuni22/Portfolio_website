@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Award } from 'lucide-react';
 import cert5 from '../assets/certificates/certificate (5).png';
-import cert1a from '../assets/certificates/certificate (1a).png';
+import cert1 from '../assets/certificates/certificate (1).png';
 import cert2 from '../assets/certificates/certificate (2).png';
-import cert3a from '../assets/certificates/certificate (3a).png';
-import cert4a from '../assets/certificates/certificate (4a).png';
+import cert3 from '../assets/certificates/certificate (3).png';
+import cert4 from '../assets/certificates/certificate (4).png';
+import cert6 from '../assets/certificates/certificate (6).png';
 
 const Certificates = ({ darkMode }) => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'Web Development', 'API & Testing', 'AI & ML', 'Networking & OS'];
+  const filters = ['All', 'Web Development', 'API & Testing', 'AI & ML', 'Networking & OS', 'Cloud'];
 
   const certificates = [
     {
@@ -29,7 +30,7 @@ const Certificates = ({ darkMode }) => {
       category: "Web Development",
       date: "Jul 2025",
       url: "https://certificate.skyrek.com/certifcates/completion/XFw09XPZaQbS",
-      image: cert1a,
+      image: cert1,
     },
     {
       id: 3,
@@ -47,7 +48,7 @@ const Certificates = ({ darkMode }) => {
       category: "Networking & OS",
       date: "Mar 2026",
       url: "https://www.credly.com/badges/60b8e5bb-f237-47b8-85e4-4763d20d16dd/linked_in_profile",
-      image: cert3a,
+      image: cert3,
     },
     {
       id: 5,
@@ -56,8 +57,17 @@ const Certificates = ({ darkMode }) => {
       category: "Networking & OS",
       date: "Mar 2026",
       url: "https://www.credly.com/badges/9385885e-dadb-450c-b18a-c6186257a167/linked_in_profile",
-      image: cert4a,
+      image: cert4,
     },
+    {
+      id: 6,
+      title: "AWS Cloud Practitioner Essentials",
+      organization: "Amazon Web Services (AWS)",
+      category: "Cloud",
+      date: "Apr 2026",
+      url: "",
+      image: cert6,
+    }
   ];
 
   const filteredCertificates = activeFilter === 'All'
@@ -65,12 +75,12 @@ const Certificates = ({ darkMode }) => {
     : certificates.filter(cert => cert.category === activeFilter);
 
   return (
-    <section 
-      id="certificates" 
+    <section
+      id="certificates"
       className={`py-20 transition-colors duration-300 w-full ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}
     >
       <div className="container px-5 mx-auto">
-        
+
         {/* Title Block */}
         <div className="text-center mb-12" data-aos="fade-up">
           <h1 className="sm:text-4xl text-3xl font-bold mb-4 text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text inline-block">
@@ -88,11 +98,10 @@ const Certificates = ({ darkMode }) => {
               key={filter}
               whileHover={{ scale: 1.05 }}
               onClick={() => setActiveFilter(filter)}
-              className={`px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 ${
-                activeFilter === filter
-                  ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md border border-transparent'
-                  : 'border border-orange-500 text-orange-500 bg-transparent hover:bg-orange-500/10'
-              }`}
+              className={`px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 ${activeFilter === filter
+                ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md border border-transparent'
+                : 'border border-orange-500 text-orange-500 bg-transparent hover:bg-orange-500/10'
+                }`}
             >
               {filter}
             </motion.button>
@@ -107,11 +116,10 @@ const Certificates = ({ darkMode }) => {
               whileHover={{ y: -5 }}
               data-aos="fade-up"
               data-aos-delay={index * 100}
-              className={`rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] flex flex-col relative ${
-                darkMode
-                  ? 'bg-gray-800 border-gray-700'
-                  : 'bg-white border-gray-200'
-              }`}
+              className={`rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] flex flex-col relative ${darkMode
+                ? 'bg-gray-800 border-gray-700'
+                : 'bg-white border-gray-200'
+                }`}
             >
               {/* Top Accent Strip */}
               <div className="h-3 w-full bg-gradient-to-r from-orange-400 to-orange-600 border-b border-orange-500/30"></div>
@@ -130,7 +138,7 @@ const Certificates = ({ darkMode }) => {
                 <h2 className={`text-lg font-bold mb-3 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                   {cert.title}
                 </h2>
-                
+
                 {/* Meta details (Org, Category, Date) */}
                 <div className="flex items-center justify-center gap-2 flex-wrap mb-3">
                   <span className="text-orange-400 font-medium text-sm">{cert.organization}</span>
@@ -144,19 +152,28 @@ const Certificates = ({ darkMode }) => {
                     {cert.date}
                   </span>
                 </div>
-                
+
                 {/* Space filler to push everything else down if titles have different lines */}
                 <div className="flex-grow"></div>
 
                 {/* Action CTA */}
-                <a 
-                  href={cert.url}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium text-sm hover:opacity-90 transition-opacity inline-block"
-                >
-                  View Certificate
-                </a>
+                {cert.url ? (
+                  <a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium text-sm hover:opacity-90 transition-opacity inline-block"
+                  >
+                    View Certificate
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    className="w-full py-2.5 rounded-full bg-gray-400 text-white font-medium text-sm cursor-not-allowed opacity-60"
+                  >
+                    No Link Available
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}
