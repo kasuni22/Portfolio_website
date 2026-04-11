@@ -22,9 +22,9 @@ const Projects = ({ darkMode }) => {
     {
       id: 2,
       title: 'Book Store Management System',
-      description: 'A full-stack MERN application where customers can browse, search, and order books with user authentication, while admins can manage the entire inventory by adding, editing, and deleting books.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express.js'],
-      live: 'https://book-store-management-system-client.onrender.com/',
+      description: 'A full-stack MERN application deployed on AWS EC2 (t3.micro, Ubuntu 24.04) with Nginx reverse proxy and PM2 process manager. Customers can browse, search, and order books with JWT authentication, while admins manage the full inventory.',
+      tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'AWS'],
+      live: 'http://52.66.79.240',
       github: 'https://github.com/kasuni22/Book_store_management_system.git',
       image: bookProject,
     },

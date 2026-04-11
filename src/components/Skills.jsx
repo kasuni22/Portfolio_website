@@ -22,6 +22,9 @@ const Skills = ({ darkMode }) => {
     { name: 'Python', icon: python },
     { name: 'Firebase', icon: firebase },
     { name: 'Vite', icon: vite },
+    { name: 'AWS', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' },
+    { name: 'Nginx', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg' },
+    { name: 'Linux', icon: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg' },
   ];
 
   return (
