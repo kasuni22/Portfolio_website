@@ -7,7 +7,7 @@ import hotelProject from '../assets/hotel_project.png';
 const Projects = ({ darkMode }) => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'React', 'PHP', 'MongoDB'];
+  const filters = ['All','AWS', 'React', 'PHP', 'MongoDB'];
 
   const projects = [
     {
@@ -24,7 +24,7 @@ const Projects = ({ darkMode }) => {
       title: 'Book Store Management System',
       description: 'A full-stack MERN application deployed on AWS EC2 (t3.micro, Ubuntu 24.04) with Nginx reverse proxy and PM2 process manager. Customers can browse, search, and order books with JWT authentication, while admins manage the full inventory.',
       tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'AWS'],
-      live: 'http://52.66.79.240',
+      live: 'http://52.66.79.240/',
       github: 'https://github.com/kasuni22/Book_store_management_system.git',
       image: bookProject,
     },
