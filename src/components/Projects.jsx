@@ -38,7 +38,7 @@ const Projects = ({ darkMode }) => {
         'React',
         'Python',
         'FastAPI',
-        'SQLite',
+        'PostgreSQL (Supabase)',
         'Cloudinary',
         'Vercel',
         'Render'
