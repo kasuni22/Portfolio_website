@@ -7,11 +7,12 @@ import cert2 from '../assets/certificates/certificate (2).png';
 import cert3 from '../assets/certificates/certificate (3).png';
 import cert4 from '../assets/certificates/certificate (4).png';
 import cert6 from '../assets/certificates/certificate (6).png';
+import cert7 from '../assets/certificates/certificate (7).png';
 
 const Certificates = ({ darkMode }) => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'Web Development', 'API & Testing', 'AI & ML', 'Networking & OS', 'Cloud'];
+  const filters = ['All', 'Web Development', 'API & Testing', 'AI & ML', 'Networking & OS', 'Cloud', 'Programming'];
 
   const certificates = [
     {
@@ -67,7 +68,16 @@ const Certificates = ({ darkMode }) => {
       date: "Apr 2026",
       url: "",
       image: cert6,
-    }
+    },
+    {
+      id: 7,
+      title: "Python (Basic)",
+      organization: "HackerRank",
+      category: "Programming",
+      date: "Jun 2026",
+      url: "https://www.hackerrank.com/certificates/iframe/b7ccb0be9f49",
+      image: cert7,
+    },
   ];
 
   const filteredCertificates = activeFilter === 'All'

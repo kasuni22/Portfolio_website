@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import bookProject from '../assets/book_project.png';
 import shopProject from '../assets/shop_project.png';
 import hotelProject from '../assets/hotel_project.png';
+import armyProject from '../assets/army_project.png';
 
 const Projects = ({ darkMode }) => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All','AWS', 'React', 'PHP', 'MongoDB'];
+  const filters = ['All', 'AWS', 'React', 'Python', 'PHP', 'MongoDB'];
 
   const projects = [
     {
@@ -30,6 +31,24 @@ const Projects = ({ darkMode }) => {
     },
     {
       id: 3,
+      title: 'Purple Family – SL BTS ARMY Community',
+      description:
+        'A full-stack community platform built for Sri Lankan BTS ARMY members. Users can register, log in, celebrate birthdays, upload wallpapers, play quizzes, sing along to BTS songs, manage profiles, and interact with the community through a modern responsive interface.',
+      tech: [
+        'React',
+        'Python',
+        'FastAPI',
+        'SQLite',
+        'Cloudinary',
+        'Vercel',
+        'Render'
+      ],
+      live: 'https://purple-family-website.vercel.app/',
+      github: 'https://github.com/kasuni22/purple-family-website.git',
+      image: armyProject,
+    },
+    {
+      id: 4,
       title: 'Retail & Wholesale Shop Control System',
       description: 'A web-based system that streamlines retail and wholesale operations by managing inventory, sales, billing, and customers with real-time tracking, secure access, and efficient workflow automation.',
       tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
@@ -78,11 +97,10 @@ const Projects = ({ darkMode }) => {
               key={filter}
               whileHover={{ scale: 1.05 }}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 rounded-full font-medium text-sm transition-all duration-300 ${
-                activeFilter === filter
+              className={`px-6 py-2 rounded-full font-medium text-sm transition-all duration-300 ${activeFilter === filter
                   ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-transparent shadow-md'
                   : 'border border-orange-500 text-orange-500 bg-transparent hover:bg-orange-500/10'
-              }`}
+                }`}
             >
               {filter}
             </motion.button>
@@ -97,11 +115,10 @@ const Projects = ({ darkMode }) => {
               whileHover={{ y: -5 }}
               data-aos="fade-up"
               data-aos-delay={index * 100}
-              className={`rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] flex flex-col ${
-                darkMode
+              className={`rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] flex flex-col ${darkMode
                   ? 'bg-gray-800 border-gray-700'
                   : 'bg-white border-gray-200'
-              }`}
+                }`}
             >
               {/* Image */}
               <div className="overflow-hidden rounded-t-2xl">
@@ -126,11 +143,10 @@ const Projects = ({ darkMode }) => {
                   {project.tech.map((t, i) => (
                     <span
                       key={i}
-                      className={`text-xs px-3 py-1 rounded-full font-medium transition-colors duration-300 ${
-                        darkMode
+                      className={`text-xs px-3 py-1 rounded-full font-medium transition-colors duration-300 ${darkMode
                           ? 'bg-orange-900/30 text-orange-400'
                           : 'bg-orange-100 text-orange-600'
-                      }`}
+                        }`}
                     >
                       {t}
                     </span>
@@ -151,9 +167,8 @@ const Projects = ({ darkMode }) => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex-1 text-center py-2 rounded-lg border border-orange-500 text-orange-500 font-medium text-sm transition-colors duration-300 ${
-                      darkMode ? 'hover:bg-gray-700' : 'hover:bg-orange-50'
-                    }`}
+                    className={`flex-1 text-center py-2 rounded-lg border border-orange-500 text-orange-500 font-medium text-sm transition-colors duration-300 ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-orange-50'
+                      }`}
                   >
                     GitHub
                   </a>
